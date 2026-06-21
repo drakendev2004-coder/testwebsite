@@ -65,3 +65,6 @@ export const getRouter = () => {
 
   return router;
 };
+
+const router = getRouter();
+export default router;
