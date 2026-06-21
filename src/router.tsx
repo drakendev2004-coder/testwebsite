@@ -3,6 +3,7 @@ import { routeTree } from "./routeTree.gen";
 
 function DefaultErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   const router = useRouter();
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
@@ -41,7 +42,7 @@ function DefaultErrorComponent({ error, reset }: { error: Error; reset: () => vo
           >
             Try again
           </button>
-          
+          <a
             href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
@@ -61,8 +62,6 @@ export const getRouter = () => {
     defaultPreloadStaleTime: 0,
     defaultErrorComponent: DefaultErrorComponent,
   });
+
   return router;
 };
-
-const router = getRouter();
-export default router;
